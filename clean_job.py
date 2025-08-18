@@ -3,11 +3,11 @@ def clean_function(context, path):
     import time
     from pathlib import Path
 
-    base_root = Path()
+    base_root = Path(path)
     now = time.time()
     age_limit = 1 * 24 * 60 * 60
 
-    for uuid_dir in base_root.iterdir(path):
+    for uuid_dir in base_root.iterdir():
         snapshots_dir = uuid_dir / "snapshots"
         if snapshots_dir.is_dir():
             for file in snapshots_dir.iterdir():
